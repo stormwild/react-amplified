@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { API, graphqlOperation } from 'aws-amplify'
 import { createTodo } from './graphql/mutations'
 import { listTodos } from './graphql/queries'
-
-import logo from './logo.svg';
+import { withAuthenticator } from '@aws-amplify/ui-react'
 import './App.css';
 
 const initialState = { name: '', description: '' }
@@ -78,4 +77,4 @@ const styles = {
   button: { backgroundColor: 'black', color: 'white', outline: 'none', fontSize: 18, padding: '12px 0px' }
 }
 
-export default App;
+export default withAuthenticator(App);
